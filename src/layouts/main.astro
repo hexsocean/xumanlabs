@@ -1,0 +1,42 @@
+---
+import Header from "../components/Header.astro";
+
+type MainProps = {
+    label: string
+};
+
+const {label } = Astro.props as MainProps;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" href="/favicon.png" />
+		<style>
+			html,
+			body {
+				font-family: system-ui;
+				margin: 0;
+			}
+			body {
+				padding: 2rem;
+			}
+		</style>
+		<title>Xuman labs</title>
+
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-slate-800 text-slate-200 p-0">
+        <Header>
+            <strong>PRESS RELEASE</strong>
+        </Header>
+		<main class="flex flex-col space-y-3 overflow-y-auto p-5 justify-center items-center">
+            <slot />
+		</main> 
+	</body>
+</html>

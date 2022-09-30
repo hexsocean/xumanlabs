@@ -1,0 +1,15 @@
+---
+type CardProps = {
+  title: string,
+  date: Date
+}
+
+const {title, date } = Astro.props as CardProps;
+---
+
+<div class="block p-6 max-w-sm min-w-[40%] bg-white rounded-lg border border-gray-200 shadow-md  dark:bg-gray-800 dark:border-gray-700">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
+    <p class="text-lg">{date}</p>
+    <div class="flex-grow py-2 border-t border-gray-400"></div>
+    <slot />
+</div>
